@@ -2,12 +2,14 @@ package org.example.repository.impl;
 
 import org.example.pojo.Reward;
 import org.example.repository.RewardRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Repository
 public class RewardRepositoryImpl implements RewardRepository {
 
     private final Map<String, ArrayList<Reward>> map = new HashMap<>();

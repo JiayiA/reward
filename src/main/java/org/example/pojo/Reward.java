@@ -3,7 +3,6 @@ package org.example.pojo;
 import com.fasterxml.jackson.annotation.JsonTypeId;
 import lombok.Data;
 import javax.persistence.*;
-import java.util.Date;
 
 @Data
 @Entity
@@ -11,7 +10,7 @@ public class Reward {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long rewardId;
+    private Long rewardId;
 
     @Column
     private String user;
@@ -26,8 +25,7 @@ public class Reward {
 
     }
 
-    public Reward(long rewardId, String user, int transactionAmount, int transactionMonth){
-        this.rewardId = rewardId;
+    public Reward(String user, int transactionAmount, int transactionMonth){
         this.user = user;
         this.transactionAmount = transactionAmount;
         this.transactionMonth = transactionMonth;

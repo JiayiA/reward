@@ -5,9 +5,11 @@ import org.example.pojo.dto.RewardResponseDTO;
 import org.example.repository.RewardRepository;
 import org.example.service.RewardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
+@Service
 public class RewardServiceImpl implements RewardService {
 
     private final RewardRepository rewardRepository;
