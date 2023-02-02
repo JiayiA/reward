@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Repository
@@ -15,11 +14,18 @@ public class RewardRepositoryImpl implements RewardRepository {
     private final Map<String, ArrayList<Reward>> map = new HashMap<>();
 
     public void init(){
-
+        ArrayList<Reward> rewards = new ArrayList<>();
+        rewards.add(new Reward("1", 150, 2));
+        rewards.add(new Reward("1", 50, 2));
+        map.put("1", rewards);
+        ArrayList<Reward> rewards1 = new ArrayList<>();
+        rewards1.add(new Reward("2", 120, 3));
+        map.put("2",rewards1);
     }
 
     @Override
     public ArrayList<Reward> findByUser(String userId){
+        System.out.println(map.size());
         return map.get(userId);
     }
 
